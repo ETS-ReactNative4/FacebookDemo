@@ -2,12 +2,29 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
 import PropTypes from 'prop-types';
-import { LoginButton, AccessToken } from 'react-native-fbsdk'
+import { LoginButton, AccessToken, LoginManager } from 'react-native-fbsdk'
 
 class LoginView extends Component {
     navigate = () => {
         this.props.onLogin('username', 'password');
     };
+    login = () => {
+        LoginManager.logInWithReadPermissions(["public_profile"]).then(
+            function (result) {
+                if (result.isCancelled) {
+                    console.log("Login cancelled");
+                } else {
+                    console.log(
+                        "Login success with permissions: " +
+                        result.grantedPermissions.toString()
+                    );
+                }
+            },
+            function (error) {
+                console.log("Login fail with error: " + error);
+            }
+        );
+    }
 
     render() {
         return (
@@ -16,6 +33,10 @@ class LoginView extends Component {
                 <TouchableOpacity onPress={this.navigate}>
                     <Text>Go to Home</Text>
                 </TouchableOpacity>
+                {/* <TouchableOpacity onPress={this.login}>
+                    <Text>Login</Text>
+                </TouchableOpacity> */}
+
                 <LoginButton
                     onLoginFinished={
                         (error, result) => {
@@ -26,7 +47,7 @@ class LoginView extends Component {
                             } else {
                                 AccessToken.getCurrentAccessToken().then(
                                     (data) => {
-                                        console.log(data.accessToken.toString())
+                                        console.log('---',data.accessToken.toString())
                                     }
                                 )
                             }
