@@ -11,6 +11,7 @@ class LoginView extends Component {
     login = () => {
         LoginManager.logInWithReadPermissions(["public_profile"]).then(
             function (result) {
+                console.log('Response :', JSON.stringify(result))
                 if (result.isCancelled) {
                     console.log("Login cancelled");
                 } else {
@@ -33,13 +34,18 @@ class LoginView extends Component {
                 <TouchableOpacity onPress={this.navigate}>
                     <Text>Go to Home</Text>
                 </TouchableOpacity>
-                {/* <TouchableOpacity onPress={this.login}>
-                    <Text>Login</Text>
-                </TouchableOpacity> */}
+                <TouchableOpacity 
+                style={{paddingVertical:30,}}
+                onPress={this.login}>
+                    <Text>Custom Login</Text>
+                </TouchableOpacity>
 
                 <LoginButton
                     onLoginFinished={
                         (error, result) => {
+                            console.log('Response :', JSON.stringify(result));
+                            console.log('Response :', JSON.stringify(error));
+
                             if (error) {
                                 console.log("login has error: " + result.error);
                             } else if (result.isCancelled) {
@@ -50,10 +56,11 @@ class LoginView extends Component {
                                         console.log('---',data.accessToken.toString())
                                     }
                                 )
+                                console.log('Login Successful')
                             }
                         }
                     }
-                    onLogoutFinished={() => console.log("logout.")}
+                    onLogoutFinished={() => console.log('logout.')}
                 />
 
             </View>

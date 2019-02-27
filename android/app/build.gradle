@@ -95,7 +95,7 @@ def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         applicationId "com.facebookdemo"
@@ -135,7 +135,8 @@ android {
 
 dependencies {
     implementation project(':react-native-fbsdk')
-    implementation 'com.facebook.android:facebook-android-sdk:4.34.0'
+    // implementation 'com.facebook.android:facebook-android-sdk:4.34.0'
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
     implementation project(':react-native-gesture-handler')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
