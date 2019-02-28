@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "1026880050979",
+    "firebase_url": "https://facebookdemo-c81a6.firebaseio.com",
+    "project_id": "facebookdemo-c81a6",
+    "storage_bucket": "facebookdemo-c81a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026880050979:android:42fc01f166fea1e5",
+        "android_client_info": {
+          "package_name": "com.facebookdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026880050979-ribdh8t65i5d246a5ao2s54a7q42d43j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.facebookdemo",
+            "certificate_hash": "a8df693ce78584b32c3099432a0885274312dbe0"
+          }
+        },
+        {
+          "client_id": "1026880050979-obgtlarn6spfadl7etgtacv56s20jr82.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.facebookdemo",
+            "certificate_hash": "a9b0a7820dc18a9f96c06e00eb4a9985d2f2b14b"
+          }
+        },
+        {
+          "client_id": "1026880050979-ftft0djagsk911jck3212qn4lhorftdk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp9NVcg3XEOGIX5dBmX_uC-dh1hI9ERQE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026880050979-ftft0djagsk911jck3212qn4lhorftdk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
